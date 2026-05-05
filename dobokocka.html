@@ -20,13 +20,14 @@
             <img class="dobokocka" src="dob1.png" >
         </td>
         <td>
-            <img class="dobokocka" src="dob2.png" >
+            <img class="dobokocka" src="dob1.png" >
         </td>
     </table>
 
     <div class="gomb">
         <input id="dobas" type="submit" value="Dobás">
     </div>
+    <h1 id="nyertes"></h1>
     <script>
         gomb = document.getElementById("dobas");
         gomb.onclick = function(event) 
@@ -34,11 +35,21 @@
             event.preventDefault(); /* a submit nem tolti ujra a paget*/
             var kocka1 = Randomizalo();
             var kocka2 = Randomizalo();
-
+            var nyertes = document.getElementById("nyertes");
             var kepek = document.getElementsByClassName("dobokocka");
 
             kepek[0].src = "dob" + kocka1 + ".png";
             kepek[1].src = "dob" + kocka2 + ".png";
+
+            if (kocka1 > kocka2){
+                nyertes.innerHTML = "Nyertes: 1. Játékos";
+            }
+            else if (kocka2 > kocka1){
+                nyertes.innerHTML = "Nyertes: 2. Játékos";
+            }
+            else{
+                nyertes.innerHTML = "Döntetlen";
+            }
         }
         
         function Randomizalo() 
