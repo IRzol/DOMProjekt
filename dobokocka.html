@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styledob.css">
     <title>Document</title>
 </head>
-<body>
+<body class="hatter">
     <table class="tabla">
         <thead>
             <th>
@@ -29,10 +29,18 @@
     </div>
     <script>
         gomb = document.getElementById("dobas");
-        gomb.onsubmit = function(event) {
+        gomb.onclick = function(event) 
+        {
             event.preventDefault(); /* a submit nem tolti ujra a paget*/
+            var kocka1 = Randomizalo();
+            var kocka2 = Randomizalo();
 
+            var kepek = document.getElementsByClassName("dobokocka");
+
+            kepek[0].src = "dob" + kocka1 + ".png";
+            kepek[1].src = "dob" + kocka2 + ".png";
         }
+        
         function Randomizalo() 
         {
             return Math.floor(Math.random() * 6) + 1;
