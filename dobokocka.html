@@ -7,27 +7,31 @@
     <title>Document</title>
 </head>
 <body class="hatter">
-    <table class="tabla">
-        <thead>
+    <table class="tabla kozepre">
+    <thead>
+        <tr>
             <th>
                 <h1 class="jatekos1szov">1. Játékos</h1>
             </th>
+            <th></th>
             <th>
                 <h1 class="jatekos2szov">2. Játékos</h1>
             </th>
-        </thead>
-        <td>
-            <img class="dobokocka" src="dob1.png" >
-        </td>
-        <td>
-            <img class="dobokocka" src="dob1.png" >
-        </td>
-    </table>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img class="dobokocka" src="dob1.png"></td>
+            <td><h1 id="nyertes"></h1></td>
+            <td><img class="dobokocka" src="dob1.png"></td>
+        </tr>
+    </tbody>
+</table>
 
     <div class="gomb">
         <input id="dobas" type="submit" value="Dobás">
     </div>
-    <h1 id="nyertes"></h1>
+    
     <script>
         gomb = document.getElementById("dobas");
         gomb.onclick = function(event) 
