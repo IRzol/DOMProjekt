@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styledob.css">
     <title>Document</title>
 </head>
 <body>
+    <table class="tabla">
+        <thead>
+            <th>
+                <h1 class="jatekos1szov">1. Játékos</h1>
+            </th>
+            <th>
+                <h1 class="jatekos2szov">2. Játékos</h1>
+            </th>
+        </thead>
+        <td>
+            <img class="dobokocka" src="dob1.png" >
+        </td>
+        <td>
+            <img class="dobokocka" src="dob2.png" >
+        </td>
+    </table>
+
+    <div class="gomb">
+        <input id="dobas" type="submit" value="Dobás">
+    </div>
+    <script>
+        gomb = document.getElementById("dobas");
+        gomb.onsubmit = function(event) {
+            event.preventDefault(); /* a submit nem tolti ujra a paget*/
+
+        }
+        
+    </script>
     
 </body>
 </html>
