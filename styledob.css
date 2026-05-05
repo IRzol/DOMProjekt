@@ -1,16 +1,18 @@
 .dobokocka
 {
-    padding-left: 380px;
+    padding-left: 330px;
 }
 .jatekos1szov{
     font-family:'Courier New', Courier, monospace;
+    font-size: 3em;
     color: red;
-    padding-left: 370px;
+    padding-left: 330px;
 }
 .jatekos2szov{
     font-family:'Courier New', Courier, monospace;
+    font-size: 3em;
     color: green;
-    padding-left: 370px;
+    padding-left: 330px;
 }
 .gomb{
     margin-top: 60px;
@@ -22,4 +24,14 @@
 }
 #dobas{
     margin: 0px;
+    font-size: 1.5em;
+    background-image: linear-gradient(to bottom right, purple, white);
+}
+#nyertes{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 3em;
+    color: blue;
+}
+.hatter{
+    background-image: linear-gradient(left,top,purple, green);
 }
