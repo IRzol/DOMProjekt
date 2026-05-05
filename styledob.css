@@ -1,37 +1,46 @@
-.dobokocka
-{
-    padding-left: 330px;
+.tabla {
+    width: 60%;
+    table-layout: fixed;
+    text-align: center;
+    margin: 0 auto;
 }
-.jatekos1szov{
-    font-family:'Courier New', Courier, monospace;
+
+.dobokocka {
+    padding-left: 0px;  
+    width: 300px;
+}
+
+.jatekos1szov {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 3em;
     color: red;
-    padding-left: 330px;
+    text-align: center;
 }
-.jatekos2szov{
-    font-family:'Courier New', Courier, monospace;
+
+.jatekos2szov {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 3em;
     color: green;
-    padding-left: 330px;
+    text-align: center;
 }
 .gomb{
     margin-top: 60px;
     text-align: center;
 }
-.tabla
-{
-    margin-top: 100px;
-}
+
 #dobas{
     margin: 0px;
     font-size: 1.5em;
     background-image: linear-gradient(to bottom right, purple, white);
+    text-align: justify;
 }
 #nyertes{
     font-family:'Courier New', Courier, monospace;
-    font-size: 3em;
+    font-size: 2em;
     color: blue;
+    display: block;
+    text-align: center;
 }
 .hatter{
-    background-image: linear-gradient(left,top,purple, green);
+    background-image: linear-gradient(to bottom left,black, red);
 }
