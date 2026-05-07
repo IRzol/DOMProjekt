@@ -13,7 +13,9 @@
             <th>
                 <h1 class="jatekos1szov">1. Játékos</h1>
             </th>
-            <th></th>
+            <th>
+                <h1 id="sszdobas"></h1>
+            </th>
             <th>
                 <h1 class="jatekos2szov">2. Játékos</h1>
             </th>
@@ -25,23 +27,37 @@
             <td><h1 id="nyertes"></h1></td>
             <td><img class="dobokocka" src="dob1.png"></td>
         </tr>
+        <tr>
+            <td><h1 id="elspont">Összes pont: 0</h1></td>
+            <td></td>
+            <td><h1 id="masodpont">Összes pont: 0</h1></td>
+        </tr>
     </tbody>
 </table>
 
     <div class="gomb">
         <input id="dobas" type="submit" value="Dobás">
     </div>
-    
+    <h2 id="tort">Történet: </h2>
+    <ul id="kiir"></ul>
     <script>
         gomb = document.getElementById("dobas");
+        var nyertes = document.getElementById("nyertes");
+        var kepek = document.getElementsByClassName("dobokocka");
+        var kiir = document.getElementById("kiir");
+        var sszdobas = document.getElementById("sszdobas");
+        var i = 0;
+        var elspont = document.getElementById("elspont");
+        var masodpont = document.getElementById("masodpont");
+        var pont1 = 0;
+        var pont2 = 0;
         gomb.onclick = function(event) 
         {
             event.preventDefault(); /* a submit nem tolti ujra a paget*/
             var kocka1 = Randomizalo();
             var kocka2 = Randomizalo();
-            var nyertes = document.getElementById("nyertes");
-            var kepek = document.getElementsByClassName("dobokocka");
-
+            pont1 += kocka1;
+            pont2 += kocka2;
             kepek[0].src = "dob" + kocka1 + ".png";
             kepek[1].src = "dob" + kocka2 + ".png";
 
@@ -54,12 +70,22 @@
             else{
                 nyertes.innerHTML = "Döntetlen";
             }
+            i++;
+            var ujElem = document.createElement("li");
+            ujElem.textContent = i + ". dobás eredménye: 1. Játékos: " + kocka1 + "; 2. Játékos: " + kocka2 ;
+            kiir.prepend(ujElem);
+            sszdobas.innerHTML = i + " .dobás";
+
+            elspont.innerHTML = "Összes pont: " + pont1;
+            masodpont.innerHTML = "Összes pont: " + pont2;
         }
         
         function Randomizalo() 
         {
             return Math.floor(Math.random() * 6) + 1;
         }
+
+        
     </script>
     
 </body>
