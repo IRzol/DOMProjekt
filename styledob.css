@@ -21,24 +21,24 @@
 .jatekos2szov {
     font-family: 'Courier New', Courier, monospace;
     font-size: 3em;
-    color: green;
+    color: rgb(5, 255, 5);
     text-align: center;
 }
 .gomb{
-    margin-top: 60px;
+    margin-top: 40px;
     text-align: center;
 }
 
 #dobas{
-    margin: 0px;
-    font-size: 1.5em;
+    border-radius: 7px;
+    font-size: 1.9em;
     background-image: linear-gradient(to bottom right, purple, white);
     text-align: justify;
 }
 #nyertes{
     font-family:'Courier New', Courier, monospace;
     font-size: 2em;
-    color: blue;
+    color: rgb(2, 173, 253);
     display: block;
     text-align: center;
 }
@@ -48,4 +48,23 @@
 body {
     min-height: 100vh;
     margin: 0;
+}
+#tort{
+    margin-left: 20px;
+}
+li{
+    font-size: 1.2em;
+}
+#sszdobas{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+#elspont, #masodpont{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    color: rgb(253, 165, 2);
+    text-align: center;
 }
