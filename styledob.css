@@ -25,7 +25,7 @@
     text-align: center;
 }
 .gomb{
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -67,4 +67,44 @@ li{
     font-size: 3em;
     color: rgb(253, 165, 2);
     text-align: center;
+}
+.dobas{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    color: yellow;
+}
+.beljebb{
+    margin-left: 630px;
+}
+.altbelj{
+    margin-left: 100px;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 16px;
+}
+
+.nav-link {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6em;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 7px;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link.aktiv {
+    color: rgb(255, 200, 0);  /* sárga - aktív oldal */
+    font-weight: bold;
+}
+
+.nav-link:not(.aktiv) {
+    color: rgb(255, 200, 0);  /* zöld - másik oldal */
+    font-weight: bold;
 }
