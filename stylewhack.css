@@ -1,123 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylewhack.css">
-    <title>Document</title>
-</head>
-<body class="hatter">
-    <nav class="navbar">
-        <a href="dobokocka.html" class="nav-link aktiv">Dobókocka</a>
-        <a href="whackamole.html" class="nav-link">Whack-a-Mole</a>
-    </nav>
-    <div class="tartalom">
-        <table class="tabla">
-            <thead>
-                <tr>
-                    <th><h1 id="ido">30 mp</h1></th>
-                    <th><h1 id="pont">Pont: 0</h1></th>
-                    <th><h1 id="legtobb">Legtöbb pont: 0</h1></th>
-               </tr>
-            </thead>
-            <tr>
-                <td><img id="lyuk1" class="kep" src="lyuk.png" alt=""></td>
-                <td><img id="lyuk2" class="kep" src="lyuk.png" alt=""></td>
-                <td><img id="lyuk3" class="kep" src="lyuk.png" alt=""></td>
-            </tr>
-            <tr>
-                <td><img id="lyuk4" class="kep" src="lyuk.png" alt=""></td>
-                <td><img id="lyuk5" class="kep" src="lyuk.png" alt=""></td>
-                <td><img id="lyuk6" class="kep" src="lyuk.png" alt=""></td>
-            </tr>
-            <tr>
-                <td><img id="lyuk7" class="kep" src="lyuk.png" alt=""></td>
-                <td><img id="lyuk8" class="kep" src="lyuk.png" alt=""></td>
-                <td><img id="lyuk9" class="kep" src="lyuk.png" alt=""></td>
-            </tr>
-        </table>
+.hatter{
+    background-image: linear-gradient(to bottom left,black, red);
+}
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 16px;
+}
 
-        <div class="gomb">
-            <input id="start" type="submit" value="Start">
-        </div>
-    </div>
+.nav-link {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6em;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 7px;
+    transition: background-color 0.2s;
+}
 
-    <script>
-        var gomb = document.getElementById("start");
-        var kepek = document.getElementsByClassName("kep");
-        var pont = 0;
-        var pontKiir = document.getElementById("pont");
-        var startolte = false;
-        var idokiir = document.getElementById("ido");
-        var mp = 30;
-        var kiiras = "";
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
-        for (let i = 0; i < kepek.length; i++) {
-            kepek[i].onclick = function() {
-            if (this.src.includes("hod.png")) {
-                pont++;
-                legtobb = pont;
-                pontKiir.innerHTML = "Pont: " + pont;
-                
-                this.src = "crashout.png"; 
-                
-                var self = this;
-                setTimeout(function() {
-                    self.src = "lyuk.png"; 
-                }, 300);
-            }
-        }
-        }
-        
-        gomb.onclick = function(event) 
-        {
-            event.preventDefault();
-            if(startolte == false)
-                {
-                    gomb.value = "Stop";
-                    startolte = true;
-                
+.nav-link.aktiv {
+    color: rgb(255, 200, 0);  /* sárga - aktív oldal */
+    font-weight: bold;
+}
 
-                    intervalID = setInterval(function() {
-                        for (let i = 0; i < kepek.length; i++) {
-                            kepek[i].src = "lyuk.png";
-                        }
-                        var randomszam = Randomizalo();
-                        for (let i = 0; i < kepek.length; i++) {
-                            if (kepek[i].id == "lyuk" + randomszam) {
-                                kepek[i].src = "hod.png";
-                            }
-                        }
-                    }, 1500);
+.nav-link:not(.aktiv) {
+    color: rgb(255, 200, 0);  /* zöld - másik oldal */
+    font-weight: bold;
+}
 
-                    intervalTimeID = setInterval(function()
-                    {
-                        mp -= 1;
-                        idokiir.innerHTML = mp + "mp";
-                    },1000)
-                    
-                }
-            else
-                {
-                    gomb.value = "Start";
-                    startolte = false;
-                    clearInterval(intervalID);
-                    clearInterval(intervalTimeID);
-                    intervalID = null;
-                    for (let i = 0; i < kepek.length; i++) 
-                    {
-                        kepek[i].src = "lyuk.png";
-                    }
-                    mp = 60;
-                    pont = 0;
-                }
-        }
-        function Randomizalo() 
-        {
-            return Math.floor(Math.random() * 9) + 1;
-        }
+.kep{
+    width: 90%;
+    height: 90%;
+}
 
+.tartalom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* tabla fent, gomb lent */
+}
 
-    </script>
-</body>
-</html>
+.tabla {
+    padding: 50px;
+    width: 40%;
+    table-layout: fixed;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.gomb{
+    margin-top: 10px;
+    text-align: center;
+}
+#start{
+    border-radius: 7px;
+    font-size: 2em;
+    background-image: linear-gradient(to bottom right, purple, white);
+    text-align: center;
+}
+#pont{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+}
+
+#legtobb{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    color: yellow;
+    text-align: center;
+}
+
+#ido{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    color: green;
+    text-align: center;
+}
