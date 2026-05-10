@@ -38,8 +38,8 @@ body {
 }
 
 .kep{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 .tartalom {
@@ -51,7 +51,7 @@ body {
 
 .tabla {
     padding: 50px;
-    width: 35%;
+    width: 40%;
     table-layout: fixed;
     text-align: center;
     margin: 0 auto;
@@ -67,4 +67,23 @@ body {
     background-image: linear-gradient(to bottom right, purple, white);
     text-align: center;
 }
+#pont{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+}
 
+.legtobb{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    color: yellow;
+    text-align: center;
+}
+
+.ido{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3em;
+    color: green;
+    text-align: center;
+}
