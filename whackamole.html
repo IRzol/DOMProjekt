@@ -15,9 +15,9 @@
         <table class="tabla">
             <thead>
                 <tr>
-                    <th></th>
+                    <th><h1 class="ido">00:00</h1></th>
                     <th><h1 id="pont">Pont: 0</h1></th>
-                    <th></th>
+                    <th><h1 class="legtobb"></h1></th>
                </tr>
             </thead>
             <tr>
@@ -50,12 +50,18 @@
         var startolte = false;
         for (let i = 0; i < kepek.length; i++) {
             kepek[i].onclick = function() {
-                if (this.src.includes("hod.png")) {
-                    pont++;
-                    pontKiir.innerHTML = "Pont: " + pont;
-                    this.src = "lyuk.png";
-                }
+            if (this.src.includes("hod.png")) {
+                pont++;
+                pontKiir.innerHTML = "Pont: " + pont;
+                
+                this.src = "crashout.png"; 
+                
+                var self = this;
+                setTimeout(function() {
+                    self.src = "lyuk.png"; 
+                }, 300);
             }
+        }
         }
         
         gomb.onclick = function(event) 
