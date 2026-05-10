@@ -15,9 +15,9 @@
         <table class="tabla">
             <thead>
                 <tr>
-                    <th><h1 class="ido">00:00</h1></th>
+                    <th><h1 id="ido">30 mp</h1></th>
                     <th><h1 id="pont">Pont: 0</h1></th>
-                    <th><h1 class="legtobb"></h1></th>
+                    <th><h1 id="legtobb">Legtöbb pont: 0</h1></th>
                </tr>
             </thead>
             <tr>
@@ -48,10 +48,15 @@
         var pont = 0;
         var pontKiir = document.getElementById("pont");
         var startolte = false;
+        var idokiir = document.getElementById("ido");
+        var mp = 30;
+        var kiiras = "";
+
         for (let i = 0; i < kepek.length; i++) {
             kepek[i].onclick = function() {
             if (this.src.includes("hod.png")) {
                 pont++;
+                legtobb = pont;
                 pontKiir.innerHTML = "Pont: " + pont;
                 
                 this.src = "crashout.png"; 
@@ -85,17 +90,26 @@
                         }
                     }, 1500);
 
+                    intervalTimeID = setInterval(function()
+                    {
+                        mp -= 1;
+                        idokiir.innerHTML = mp + "mp";
+                    },1000)
+                    
                 }
             else
                 {
                     gomb.value = "Start";
                     startolte = false;
                     clearInterval(intervalID);
+                    clearInterval(intervalTimeID);
                     intervalID = null;
                     for (let i = 0; i < kepek.length; i++) 
                     {
                         kepek[i].src = "lyuk.png";
                     }
+                    mp = 60;
+                    pont = 0;
                 }
         }
         function Randomizalo() 
