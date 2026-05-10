@@ -4,6 +4,8 @@
 body {
     min-height: 100vh;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 .navbar {
     display: flex;
@@ -40,9 +42,16 @@ body {
     height: 100%;
 }
 
+.tartalom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* tabla fent, gomb lent */
+}
+
 .tabla {
     padding: 50px;
-    width: 83%;
+    width: 35%;
     table-layout: fixed;
     text-align: center;
     margin: 0 auto;
@@ -58,3 +67,4 @@ body {
     background-image: linear-gradient(to bottom right, purple, white);
     text-align: center;
 }
+
