@@ -8,7 +8,7 @@
 </head>
 <body class="hatter">
     <nav class="navbar">
-        <a href=index.html" class="nav-link aktiv">Dobókocka</a>
+        <a href="dobokocka.html" class="nav-link aktiv">Dobókocka</a>
         <a href="whackamole.html" class="nav-link">Whack-a-Mole</a>
     </nav>
     <div class="tartalom">
@@ -49,14 +49,14 @@
         var pontKiir = document.getElementById("pont");
         var startolte = false;
         var idokiir = document.getElementById("ido");
-        var mp = 30;
-        var kiiras = "";
-
+        var mp = 45;
+        var legtobb = 0;
+        var legtobbkiir = document.getElementById("legtobb");
+        
         for (let i = 0; i < kepek.length; i++) {
             kepek[i].onclick = function() {
-            if (this.src.includes("hod.png")) {
+            if (kepek[i].src.includes("hod.png")) {
                 pont++;
-                legtobb = pont;
                 pontKiir.innerHTML = "Pont: " + pont;
                 
                 this.src = "crashout.png"; 
@@ -94,23 +94,38 @@
                     {
                         mp -= 1;
                         idokiir.innerHTML = mp + "mp";
+                        if (mp <= 0) 
+                        {  
+                            Leallas();
+                        }
                     },1000)
                     
                 }
             else
                 {
-                    gomb.value = "Start";
-                    startolte = false;
-                    clearInterval(intervalID);
-                    clearInterval(intervalTimeID);
-                    intervalID = null;
-                    for (let i = 0; i < kepek.length; i++) 
-                    {
-                        kepek[i].src = "lyuk.png";
-                    }
-                    mp = 60;
-                    pont = 0;
+                    Leallas();
                 }
+        }
+        function Leallas()
+        {
+            gomb.value = "Start";
+            startolte = false;
+            clearInterval(intervalID);
+            clearInterval(intervalTimeID);
+            intervalID = null;
+            for (let i = 0; i < kepek.length; i++) 
+                {
+                    kepek[i].src = "lyuk.png";
+                }
+            mp = 45;
+            idokiir.innerHTML = "45mp";
+            if (pont > legtobb)
+            {
+                legtobb = pont;
+                legtobbkiir.innerHTML = "Legtöbb pont: " + legtobb;
+            }
+            pont = 0;
+            pontKiir.innerHTML = "Pont: 0";
         }
         function Randomizalo() 
         {
